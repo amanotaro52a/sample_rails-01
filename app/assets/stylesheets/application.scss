@@ -1,0 +1,37 @@
+.top-wrapper {
+  background-image: url("top.jpg");
+  height: calc(100vh - 134px);
+  position: relative;
+  background-position: center;
+
+  .top-inner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    font-size: 3rem;
+    .yuji-syuku-regular {
+      font-family: "Yuji Syuku", serif;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 150px;
+      writing-mode: vertical-rl;
+
+      @media (min-width: 450px) {
+        writing-mode: horizontal-tb;
+      }
+    }
+  }
+}
+.navbar-brand {
+  font-family: "Yuji Syuku", serif;
+  margin-left: 5%;
+}
+.navbar-toggler {
+  margin-right: 5%;
+}
+.nav-item {
+  margin-right: 5%;
+}
