@@ -21,13 +21,23 @@
         <li class='nav-item'>
           <%= link_to 'ブックマーク一覧', '#', class: 'nav-link' %>
         </li>
-
+        <% if user_signed_in? %>
+          <li class='nav-item'>
+            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+          </li>
+        <% else %>  
+          <li class='nav-item'>
+            <%= link_to '新規作成', new_user_registration_path, class: 'nav-link' %>
+          </li>
+          <li class='nav-item'>
+            <%= link_to 'ログイン', new_user_session_path, class: 'nav-link' %>
+          </li>
+        <% end %>
         <li class='nav-item dropdown dropdown-slide'>
           <div class='dropdown-menu dropdown-menu-end'>
             <div class='dropdown-item'>天野太郎</div>
             <div class='dropdown-divider'></div>
             <%= link_to 'プロフィール', '#', class: 'dropdown-item' %>
-            <%= link_to 'ログアウト', '#', class: 'dropdown-item' %>
           </div>
         </li>
       </ul>
