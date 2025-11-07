@@ -18,5 +18,5 @@ class ApplicationController < ActionController::Base
       flash[:danger] = flash[:alert]
       flash.delete(:alert)
     end
-  end    
+  end
 end
