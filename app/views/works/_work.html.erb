@@ -1,7 +1,11 @@
 <div class="col-sm-12 col-lg-4 mb-3">
   <div id="work-id-<%= work.id %>">
     <div class="card">
-      <%= image_tag "no_image.png", class: "card-img-top", width: "300", height:"200" %>
+      <% if work.image %>
+        <%= image_tag work.image_url, class: "card-img-top", width: "300", height:"200" if work.image %>
+      <% else %>
+        <%= image_tag "no_image.png", class: "card-img-top", width: "300", height:"200" %>
+      <% end %>  
       <div class="card-body">
         <div class="d-flex">
           <h4 class="card-title">
@@ -20,7 +24,7 @@
           <li><i class="bi bi-person"></i><%= work.user.decorate.name %></li>
           <li><i class="bi bi-calendar"></i><%= l work.created_at, format: :short %></li>
         </ul>
-        <p class="card-text">本文</p>
+        <p class="card-text"><%= work.body %></p>
       </div>
     </div>
   </div>
