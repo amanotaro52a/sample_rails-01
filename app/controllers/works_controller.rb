@@ -22,6 +22,6 @@ class WorksController < ApplicationController
   private
 
   def work_params
-    params.require(:work).permit(:title, :body)
+    params.require(:work).permit(:title, :body, :image)
   end
 end

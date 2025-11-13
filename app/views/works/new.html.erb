@@ -11,6 +11,10 @@
           <%= f.label :説明 %>
           <%= f.text_area :body, class: "form-control", rows: "10" %>
         </div>
+        <div class="mb-3">
+          <%= f.label :画像 %>
+          <%= f.file_field :image, class: "form-control", accept: 'image/*' %>
+        </div>  
         <%= f.submit nil, class: "btn btn-primary" %>
       <% end %>
     </div>

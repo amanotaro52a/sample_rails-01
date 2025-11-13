@@ -1,7 +1,7 @@
 <div class="col-sm-12 col-lg-4 mb-3">
   <div id="work-id-<%= work.id %>">
     <div class="card">
-      <%= image_tag "no_image.png", class: "card-img-top", width: "300", height:"200" %>
+      <%= image_tag work.image_url, class: "card-img-top", width: "300", height:"200" if work.image %>
       <div class="card-body">
         <div class="d-flex">
           <h4 class="card-title">
