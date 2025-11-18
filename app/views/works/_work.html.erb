@@ -5,11 +5,11 @@
         <%= image_tag work.image_url, class: "card-img-top", width: "300", height:"200" if work.image %>
       <% else %>
         <%= image_tag "no_image.png", class: "card-img-top", width: "300", height:"200" %>
-      <% end %>  
+      <% end %>
       <div class="card-body">
         <div class="d-flex">
           <h4 class="card-title">
-            <%= link_to work.title, '#' %>
+            <%= link_to work.title, work_path(work) %>
           </h4>
           <div class='ms-auto'>
             <%= link_to '#', id: "button-edit-#{work.id}" do %>

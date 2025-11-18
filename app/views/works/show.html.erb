@@ -1,0 +1,32 @@
+<div class="container pt-5">
+  <div class="row mb-3">
+    <div class="col-lg-8 offset-lg-2">
+      <h1>作品詳細</h1>
+      <article class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-3">
+              <%= image_tag @work.image_url, width: "300", height: "200", class: "card-img-top img-fluid" %>
+            </div>
+            <div class="col-md-9">
+              <h3 style="display: inline;"><%= @work.title %></h3>
+              <ul class="list-inline">
+                <li class="list-inline-item"><%= "by #{@work.user.decorate.name}" %></li>
+                <li class="list-inline-item"><%= l @work.created_at, format: :long %></li>
+              </ul>
+              <div class='d-flex justify-content-end'>
+                <%= link_to "#", id: "button-edit-#{@work.id}" do %>
+                  <i class='bi bi-pencil-fill'></i>
+                <% end %>
+                <%= link_to "#", id: "button-delete-#{@work.id}", class: "ms-2" do %>
+                  <i class="bi bi-trash-fill"></i>
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <p><%= simple_format(@work.body) %></p>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
