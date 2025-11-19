@@ -4,7 +4,9 @@ Rails.application.routes.draw do
     sessions: "users/sessions"
   }
   resources :posts
-  resources :works, only: %i[index new create show]
+  resources :works, only: %i[index new create show] do
+    resources :comments, only: %i[create edit destroy], shallow: true
+  end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
