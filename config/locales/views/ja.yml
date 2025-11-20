@@ -1,0 +1,48 @@
+ja:
+  helpers:
+    submit:
+      create: 登録
+      submit: 保存
+      update: 更新
+    label:
+      email: メールアドレス
+      password: パスワード
+  defaults:
+    post: 投稿
+    flash_message:
+      created: "%{item}を作成しました"
+      not_created: "%{item}を作成出来ませんでした"
+      require_login: ログインしてください
+  header:
+    login: ログイン
+    logout: ログアウト
+    work: 作品
+    work_index: 作品一覧
+    create_work: 作品新規作成
+    bookmark_index: ブックマーク一覧
+    profile: プロフィール
+  user_sessions:
+    new:
+      title: ログイン
+      login: ログイン
+      to_register_page: 登録ページへ
+      password_forget: パスワードをお忘れの方はこちら
+    create:
+      success: ログインしました
+      failure: ログインに失敗しました
+    destroy:
+      success: ログアウトしました
+  users:
+    new:
+      title: ユーザー登録
+      to_login_page: ログインページへ
+    create:
+      success: ユーザー登録が完了しました
+      failure: ユーザー登録に失敗しました
+  works:
+    new:
+      title: 作品新規作成
+    show:
+      title: 作品詳細
+    index:
+      title: 作品一覧
