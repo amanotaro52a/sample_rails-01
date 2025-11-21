@@ -25,6 +25,10 @@ class WorksController < ApplicationController
     @comments = @work.comments.includes(:user).order(created_at: :desc)
   end
 
+  def bookmarks
+    @bookmark_works = current_user.bookmark_works.includes(:user).order(created_at: :desc)
+  end
+
   private
 
   def work_params

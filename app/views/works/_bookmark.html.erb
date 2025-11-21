@@ -1,0 +1,3 @@
+<%= link_to bookmarks_path(work_id: work.id), id: "bookmark-button-for-work-#{work.id}", data: { turbo_method: :post } do %>
+  <i class="bi bi-star"></i>
+<% end %>

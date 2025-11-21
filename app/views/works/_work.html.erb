@@ -11,14 +11,18 @@
           <h4 class="card-title">
             <%= link_to work.title, work_path(work) %>
           </h4>
-          <div class='ms-auto'>
-            <%= link_to '#', id: "button-edit-#{work.id}" do %>
-              <i class="bi bi-pencil-fill"></i>
-            <% end %>
-            <%= link_to '#', id: "button-delete-#{work.id}", method: :delete, data: {confirm: ''} do %>
-              <i class="bi bi-trash-fill"></i>
-            <% end %>
-          </div>
+          <% if current_user.own?(work) %>
+            <div class='ms-auto'>
+              <%= link_to '#', id: "button-edit-#{work.id}" do %>
+                <i class="bi bi-pencil-fill"></i>
+              <% end %>
+              <%= link_to '#', id: "button-delete-#{work.id}", method: :delete, data: {confirm: ''} do %>
+                <i class="bi bi-trash-fill"></i>
+              <% end %>
+            </div>
+          <% else %>
+            <%= render 'bookmark_buttons', { work: work } %>
+          <% end %>
         </div>
         <ul class="list-inline">
           <li><i class="bi bi-person"></i><%= work.user.decorate.name %></li>

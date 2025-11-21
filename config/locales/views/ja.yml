@@ -46,3 +46,12 @@ ja:
       title: 作品詳細
     index:
       title: 作品一覧
+    bookmarke:
+      title: お気に入り一覧
+      no_result: お気に入り登録された作品がありません
+  bookmarks:
+    create:
+      success: お気に入りに登録しました
+    destroy:
+      success: お気に入りを外しました
+  
