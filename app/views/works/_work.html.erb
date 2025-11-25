@@ -13,10 +13,10 @@
           </h4>
           <% if current_user.own?(work) %>
             <div class='ms-auto'>
-              <%= link_to '#', id: "button-edit-#{work.id}" do %>
+              <%= link_to edit_work_path(work), id: "button-edit-#{work.id}" do %>
                 <i class="bi bi-pencil-fill"></i>
               <% end %>
-              <%= link_to '#', id: "button-delete-#{work.id}", method: :delete, data: {confirm: ''} do %>
+              <%= link_to work_path(work), id: "button-delete-#{work.id}", method: :delete, data: {confirm: '作品を削除しますか?'} do %>
                 <i class="bi bi-trash-fill"></i>
               <% end %>
             </div>

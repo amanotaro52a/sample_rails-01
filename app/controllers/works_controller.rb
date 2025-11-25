@@ -25,6 +25,26 @@ class WorksController < ApplicationController
     @comments = @work.comments.includes(:user).order(created_at: :desc)
   end
 
+  def edit
+    @work = current_user.works.find(params[:id])
+  end
+
+  def update
+    @work = current_user.works.find(params[:id])
+    if @work.update(work_params)
+      redirect_to work_path(@work), success: "更新しました"
+    else
+      flash.now[:danger] = "更新できませんでした"
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    work = current_user.works.find(params[:id])
+    work.destroy!
+    redirect_to works_path, success: "作品を削除しました"
+  end
+
   def bookmarks
     @bookmark_works = current_user.bookmark_works.includes(:user).order(created_at: :desc)
   end
