@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  include Pagy::Method
   protect_from_forgery with: :exception
   add_flash_types :success, :danger
   # Only allow modern browsers supporting webp images, web push, badges, import maps, CSS nesting, and CSS :has.
