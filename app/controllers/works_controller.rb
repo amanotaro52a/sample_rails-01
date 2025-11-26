@@ -2,7 +2,7 @@ class WorksController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @works = Work.includes(:user)
+    @pagy, @works = pagy(Work.includes(:user), limit: 15)
   end
 
   def new
