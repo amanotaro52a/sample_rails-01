@@ -1,13 +1,11 @@
 class BookmarksController < ApplicationController
   def create
-    work = Work.find(params[:work_id])
-    current_user.bookmark(work)
-    redirect_to works_path, success: "お気に入りに登録しました"
+    @work = Work.find(params[:work_id])
+    current_user.bookmark(@work)
   end
 
   def destroy
-    work = current_user.bookmarks.find(params[:id]).work
-    current_user.unbookmark(work)
-    redirect_to works_path, success: "お気に入りから外しました", status: :see_other
+    @work = current_user.bookmarks.find(params[:id]).work
+    current_user.unbookmark(@work)
   end
 end

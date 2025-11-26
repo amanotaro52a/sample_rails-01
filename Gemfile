@@ -35,7 +35,7 @@ gem "draper", "4.0.2"
 # gem "image_processing", "~> 1.2"
 gem "rails-i18n", "~> 7.0.0"
 gem "devise-i18n"
-
+gem "turbo-rails"
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
