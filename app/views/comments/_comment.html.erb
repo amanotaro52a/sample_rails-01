@@ -15,7 +15,7 @@
           <% end %>
         </li>
         <li class="list-inline-item">
-          <%= link_to "#", class: "delete-comment-link" do %>
+          <%= link_to comment_path(comment), class: "delete-comment-link", data: { turbo_method: :delete, turbo_confirm: "コメントを削除しますか？" } do %>
             <i class="bi bi-trash-fill"></i>
           <% end %>
         </li>
