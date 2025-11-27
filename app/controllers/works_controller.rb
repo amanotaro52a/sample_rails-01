@@ -2,7 +2,8 @@ class WorksController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @pagy, @works = pagy(Work.includes(:user), limit: 15)
+    @q = Work.ransack(params[:q])
+    @pagy, @works = pagy(@q.result(distinct: true).includes(:user).order(created_at: :desc), limit: 15)
   end
 
   def new
@@ -46,7 +47,8 @@ class WorksController < ApplicationController
   end
 
   def bookmarks
-    @bookmark_works = current_user.bookmark_works.includes(:user).order(created_at: :desc)
+    @q = current_user.bookmark_works.ransack(params[:q])
+    @pagy, @bookmark_works = pagy(@q.result(distinct: true).includes(:user).order(created_at: :desc), limit: 15)
   end
 
   private
