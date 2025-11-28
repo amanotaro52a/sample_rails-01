@@ -24,11 +24,12 @@
         <% if user_signed_in? %>
           <li class='nav-item dropdown dropdown-side'>
             <%= link_to '#', class: 'nav-link', data: { bs_toggle: 'dropdown' }, aria: { haspopup: 'true', expanded: 'false' }, id: 'header-profile' do %>
-              <%= image_tag 'icon.jpeg', class: 'rounded-circle mr15', width: '40', height: '40' %>
-            <% end %>              
+              <%= image_tag current_user.avatar_url, class: 'rounded-circle mr15', width: '40', height: '40' %>
+            <% end %>
             <div class='dropdown-menu dropdown-menu-end'>
               <div class='dropdown-item'><%= current_user.decorate.name %></div>
               <div class='dropdown-divider'></div>
+              <%= link_to 'ユーザー設定', profile_path, class: 'dropdown-item' %>
               <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'nav-link' %>
             </div>  
           </li>
