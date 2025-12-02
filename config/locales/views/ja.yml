@@ -46,7 +46,9 @@ ja:
       title: 作品詳細
     index:
       title: 作品一覧
-    bookmarke:
+    edit:
+      title: 作品編集  
+    bookmarks:
       title: お気に入り一覧
       no_result: お気に入り登録された作品がありません
   bookmarks:
@@ -54,4 +56,9 @@ ja:
       success: お気に入りに登録しました
     destroy:
       success: お気に入りを外しました
+  profiles:
+    show:
+      title: ユーザー詳細
+    edit: 
+      title: ユーザー編集
   
