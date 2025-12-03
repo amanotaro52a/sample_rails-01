@@ -13,9 +13,9 @@ class WorksController < ApplicationController
   def create
     @work = current_user.works.build(work_params)
     if @work.save
-      redirect_to works_path, success: "作品の新規作成に成功しました"
+      redirect_to works_path, success: t("defaults.flash_message.work_created")
     else
-      flash.now[:danger] = "作品の新規作成に失敗しました"
+      flash.now[:danger] = t("defaults.flash_message.work_not_created")
       render :new, status: :unprocessable_entity
     end
   end
@@ -33,9 +33,9 @@ class WorksController < ApplicationController
   def update
     @work = current_user.works.find(params[:id])
     if @work.update(work_params)
-      redirect_to work_path(@work), success: "更新しました"
+      redirect_to work_path(@work), success: t("defaults.flash_message.work_update")
     else
-      flash.now[:danger] = "更新できませんでした"
+      flash.now[:danger] = t("defaults.flash_message.work_not_update")
       render :edit, status: :unprocessable_entity
     end
   end
@@ -43,7 +43,7 @@ class WorksController < ApplicationController
   def destroy
     work = current_user.works.find(params[:id])
     work.destroy!
-    redirect_to works_path, success: "作品を削除しました"
+    redirect_to works_path, success: t("defaults.flash_message.work_destroy")
   end
 
   def bookmarks

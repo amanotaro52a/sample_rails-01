@@ -11,8 +11,13 @@ ja:
   defaults:
     post: 投稿
     flash_message:
-      created: "%{item}を作成しました"
-      not_created: "%{item}を作成出来ませんでした"
+      work_created: 作品の新規作成に成功しました
+      work_not_created: 作品の新規作成に失敗しました
+      work_update: 作品の更新に成功しました
+      work_not_update: 作品の更新に失敗しました
+      work_destroy: 作品を削除しました
+      user_update: プロフィールを更新しました
+      user_not_update: プロフィールの更新に失敗しました
       require_login: ログインしてください
   header:
     gallery: 作品展
@@ -51,7 +56,9 @@ ja:
       title: 作品一覧
       no_work: 作品がありません。
     edit:
-      title: 作品編集  
+      title: 作品編集
+    work:
+      delete: 作品を削除しますか?
     bookmarks:
       title: お気に入り一覧
       no_result: お気に入り登録された作品がありません。
