@@ -11,7 +11,7 @@
         <% if @works.present? %>
           <%= render @works %>            
         <% else %>
-          <div class="mb-3">作品がありません</div>
+          <div class="mb-3"><%= t('.no_work') %></div>
         <% end %>
       </div>
       <%== @pagy.series_nav(:bootstrap) %>

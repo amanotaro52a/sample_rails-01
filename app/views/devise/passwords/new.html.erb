@@ -1,13 +1,13 @@
 <% content_for(:title, t('.title')) %>
 <div class=" m-3">
   <div class="col-md-12 col-lg-10 mx-auto px-5">
-    <h2>パスワードをお忘れですか?</h2>
+    <h2><%= t('.title') %></h2>
     
     <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
       <div class="field my-5 px-5">
-        <%= f.label :メール %><br />
+        <%= f.label :email %><br />
         <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
       </div>
 

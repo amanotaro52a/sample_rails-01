@@ -1,15 +1,15 @@
 <%= form_with model: @work do |f| %>
   <div class="mb-3">
-    <%= f.label :タイトル %>
+    <%= f.label :title %>
     <%= f.text_field :title, class: "form-control" %>
   </div>
   <div class="mb-3">
-    <%= f.label :説明 %>
+    <%= f.label :body %>
     <%= f.text_area :body, class: "form-control", rows: "10" %>
   </div>
   <div class="mb-3">
-    <%= f.label :画像 %>
+    <%= f.label :image %>
     <%= f.file_field :image, class: "form-control", accept: 'image/*' %>
-  </div>  
+  </div>
   <%= f.submit nil, class: "btn btn-primary" %>
 <% end %>

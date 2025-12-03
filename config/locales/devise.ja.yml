@@ -49,12 +49,20 @@ ja:
       updated_but_not_signed_in: "アカウント情報を更新しました。パスワードを変更したため、再度ログインしてください。"
       new:
         title: "新規登録"
+        create: "ユーザー登録"
+        password_min_length: "(%{count} 文字以上)"
+    shared: 
+        links:
+          login: "ログイン"
+          create: "新規登録"
+          forgot_your_password?: "パスワードをお忘れですか?" 
     sessions:
       signed_in: "ログインしました。"
       signed_out: "ログアウトしました。"
       already_signed_out: "ログアウトしました。"
       new: 
         title: "ログイン"
+        login: "ログイン"
     unlocks:
       send_instructions: "数分以内にアカウントのロック解除手順を記載したメールをお送りします。"
       send_paranoid_instructions: "もしアカウントが存在する場合、数分以内にロック解除手順を記載したメールをお送りします。"

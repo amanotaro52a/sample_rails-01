@@ -1,0 +1,28 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+      work: 作品
+      comment: コメント
+      bookmarks: お気に入り
+    attributes:
+      user:
+        email: メールアドレス
+        name: 名前
+        avatar: アバター
+        reset_password_token: パスワードリセットトークン
+        reset_password_sent_at: トークン有効期限
+        reset_password_email_sent_at: パスワードリセット送信日時
+        allow_password_change: パスワード再設定
+      work:
+        user: ユーザー
+        title: 題名
+        body: 説明
+        image: 作品画像
+      comment:
+        user: ユーザー
+        work: 作品
+        body: コメント
+      bookmark:
+        user: ユーザー
+        work: 作品

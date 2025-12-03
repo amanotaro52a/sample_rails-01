@@ -7,6 +7,7 @@ ja:
     label:
       email: メールアドレス
       password: パスワード
+      remember_password: パスワードを記憶する
   defaults:
     post: 投稿
     flash_message:
@@ -14,12 +15,13 @@ ja:
       not_created: "%{item}を作成出来ませんでした"
       require_login: ログインしてください
   header:
+    gallery: 作品展
     login: ログイン
     logout: ログアウト
     work: 作品
     work_index: 作品一覧
-    create_work: 作品新規作成
-    bookmark_index: ブックマーク一覧
+    create_work: 新たに作品を展示する
+    bookmark_index: お気に入り一覧
     profile: プロフィール
   user_sessions:
     new:
@@ -44,13 +46,17 @@ ja:
       title: 作品新規作成
     show:
       title: 作品詳細
+      delete: 作品を削除しますか?
     index:
       title: 作品一覧
+      no_work: 作品がありません。
     edit:
       title: 作品編集  
     bookmarks:
       title: お気に入り一覧
-      no_result: お気に入り登録された作品がありません
+      no_result: お気に入り登録された作品がありません。
+    search_form:
+      serach_word: 検索ワード  
   bookmarks:
     create:
       success: お気に入りに登録しました
@@ -58,7 +64,8 @@ ja:
       success: お気に入りを外しました
   profiles:
     show:
-      title: ユーザー詳細
+      title: プロフィール
+      edit_profile: プロフィール編集
     edit: 
-      title: ユーザー編集
+      title: プロフィール編集
   
