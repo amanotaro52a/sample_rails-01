@@ -5,14 +5,13 @@
       <%= render "search_form", q: @q, url: bookmarks_works_path %>
     </div>
   </div>
-  <!-- 掲示板一覧 -->
   <div class="row">
     <div class="col-12">
       <div class="row">
         <% if @bookmark_works.present? %>
           <%= render @bookmark_works %>            
         <% else %>
-          <div class="mb-3">作品がありません</div>
+          <div class="mb-3"><%= t('.no_result') %></div>
         <% end %>
       </div>
     </div>
