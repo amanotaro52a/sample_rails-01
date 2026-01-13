@@ -30,7 +30,7 @@ gem "shrine"
 gem "fastimage"
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
-gem "draper", "4.0.2"
+gem "draper", "4.0.6"
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 gem "rails-i18n", "~> 7.0.0"
