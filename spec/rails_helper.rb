@@ -8,8 +8,10 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 # that will avoid rails generators crashing because migrations haven't been run yet
 # return unless Rails.env.test?
 require 'rspec/rails'
-# Add additional requires below this line. Rails is not loaded until this point!
+require 'warden/test/helpers'
 
+# Add additional requires below this line. Rails is not loaded until this point!
+Dir[Rails.root.join('spec', 'support', '**', '*.rb')].sort.each { |f| require f }
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
 # run as spec files by default. This means that files in spec/support that end
@@ -35,6 +37,17 @@ rescue ActiveRecord::PendingMigrationError => e
   abort e.to_s.strip
 end
 RSpec.configure do |config|
+  config.include Warden::Test::Helpers, type: :system
+  config.before(:each, type: :system) do
+    driven_by :rack_test
+    Capybara.server_host = IPSocket.getaddress(Socket.gethostname)
+    Capybara.server_port = 4444
+    Capybara.app_host = "http://#{Capybara.server_host}:#{Capybara.server_port}"
+    Capybara.ignore_hidden_elements = false
+  end
+  config.after(type: :system) do
+    Warden.test_reset!
+  end
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_paths = [
     Rails.root.join('spec/fixtures')
